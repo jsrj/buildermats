@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "live":  "live-server -p 8080 ./bin/www",
+    "live": "live-server -p 8080 ./bin/www",
     "push-all": "git push github master && git push heroku master"
   },
   "dependencies": {
