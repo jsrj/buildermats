@@ -5,10 +5,21 @@ const logger       = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
-const mongoose     = require('mongoose');
+const mysql        = require('mysql');
 
+const ev = process.env;
 
-mongoose.connect('mongodb://localhost/distributor-project');
+/* DATABASE CONTEXT */
+const db = mysql.createConnection({
+  host:     ev.HOST,
+  user:     ev.USER,
+  password: ev.PASS,
+  database: ev.DBASE
+});
+
+db.connect();
+/* DATABASE CONTEXT */
+
 
 const app = express();
 
