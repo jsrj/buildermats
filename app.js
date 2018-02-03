@@ -7,6 +7,7 @@ const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mysql        = require('mysql');
 
+require('dotenv').config();
 const ev = process.env;
 
 /* DATABASE CONTEXT */
@@ -17,7 +18,7 @@ const db = mysql.createConnection({
   database: ev.DBASE
 });
 
-db.connect();
+//db.connect();
 /* DATABASE CONTEXT */
 
 
